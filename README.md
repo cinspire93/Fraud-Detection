@@ -14,6 +14,15 @@ The biggest issue with the dataset was imbalance. There were way more non-fraudu
 ![ROC curve](/img/ROC_curves.png)
 The pipeline can be seen in test_models.py. The groundwork is laid so that I only have to provide a list of models that I want to try and the pipeline will go through every single one of them automatically. Since the main focus was on improving boosting and random forest classifiers, I took a very liberal approach to feature engineering. In the end, the random forest classifier model achieved a 93% recall while maintaining an 88% precision. The most important features included payout ratio(number of payouts divided by number of orders) and whether an account had sold any tickets before.
 
-It is important to note, however, that recall and precision is very much changeable up to the user. User could change the threshold parameter in the Classifier.py file that modifies the fraud decision boundary based on the user's preference. If the cost of checking in with a user for fraudulent activity is relatively affordable, then lowering the threshold to get a higher recall at the cost of precision is not a bad option. Conversely, raising the threshold is also reasonable if low precision comes with too much cost.
+It is important to note, however, that recall and precision is very much customizable. User could change the threshold parameter in the Classifier.py file that modifies the fraud decision boundary based on the user's preference. If the cost of checking in with a user for fraudulent activity is relatively affordable, then lowering the threshold to get a higher recall at the cost of precision is not a bad option. Conversely, raising the threshold is also reasonable if low precision comes with too much cost.
 ![Profit curve](/img/profit_curves.png)
 The cost-benefit matrix was constructed from a loss perspective, meaning that only the cost of every action is taken into account. For example, if the model predicted fraud, and there was a fraud, we lose the money from checking in with the account user. On the other hand, if we failed to catch a fraud, that will be reflected as a huge loss. The key insight from the profit curve image was that we did not have to predict every account to be a fraud. In fact, the sweet spot stayed at around 93 percent because it actually maximized our profit.
+
+## Questions:
+Feel free to reach out to me at __cchen9331@gmail.com__
+
+## Directory:
+1. _**img**_ folder contains all graphs that I found useful for my analysis
+2. _**model**_ folder contains the pickled model that I would use on a webapp
+3. _**src**_ folder contains the python scripts that clean up the data, engineer features and run the model selection pipeline
+4. _**Presentation**_ is the presentation for the case study
