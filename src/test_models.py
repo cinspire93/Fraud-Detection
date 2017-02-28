@@ -1,15 +1,14 @@
+from Classifiers import Classifiers
 from feature_format import feature_engineering
 from imblearn.over_sampling import SMOTE
 import json
 import numpy as np
 import pandas as pd
 import pickle
-from Classifiers import Classifiers
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
-from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import recall_score, precision_score, f1_score, confusion_matrix
+from sklearn.model_selection import GridSearchCV
 
 CLF_PICKLE_FILENAME = "our_classifier.pkl"
 

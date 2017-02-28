@@ -1,7 +1,6 @@
 import json
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import SMOTE
 
 if __name__ == '__main__':
     with open('data/data.json') as f:
